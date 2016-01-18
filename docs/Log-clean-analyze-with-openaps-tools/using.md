@@ -197,7 +197,7 @@ Some people have found it more beneficial to pull blood glucose values from Nigh
 fields = <br>
 cmd = bash <br>
 vendor = openaps.vendors.process <br>
-args = -c "curl -s https://yourwebsite.azurewebsites.net/api/v1/entries.json | json -e 'this.glucose = this.sgv'" <br>
+args = -c "curl -g -s https://yourwebsite.azurewebsites.net/api/v1/entries.json?find[type]=sgv | json -e 'this.glucose = this.sgv'" <br>
 
 In addition, you need to alter your monitor/glucose.json report to use this device rather than the cgms device you setup above.  The report will look like this in your openaps.ini file:
   
